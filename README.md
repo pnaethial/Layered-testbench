@@ -10,20 +10,18 @@ To verify the FSM-based sequence detector, a **layered testbench** is employed. 
 
 ### Key Components of the Layered Testbench:
 1. **Packet**:
-   - A structured entity (such as a SystemVerilog struct) used to define the inputs and outputs of the FSM.
+   - To define the inputs and outputs of the FSM.
    - Encapsulates input sequences and expected outputs, ensuring consistent and organized communication between testbench components.
    
 2. **Generator (Stimulus Generator)**:
-   - Generates input sequences to simulate real-world scenarios.
+   - Randomises the random input sequences to simulate real-world scenarios.
    - Ensures edge cases, random inputs, and corner conditions are tested.
      
 3. **Driver**:
    - Drives the generated input sequences (from the generator) to the DUT (Design Under Test).
-   - Converts high-level input packets into low-level signals suitable for FSM input.
    
 4. **Monitor**:
    - Observes the FSM's output and captures the behavior.
-   - Collects results for further analysis.
     
 5. **Reference Model**:
    - A behavioral or software model of the FSM used to calculate the expected outputs.
@@ -31,7 +29,6 @@ To verify the FSM-based sequence detector, a **layered testbench** is employed. 
 
 6. **Scoreboard**:
    - Compares the FSM's actual output against expected results.
-   - Flags mismatches for debugging purposes.
      
 7. **Environment**:
    - Combines all components into a unified framework.
